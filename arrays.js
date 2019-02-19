@@ -15,26 +15,20 @@ function addElementToEndOfArray(arr, elem) {
 }
 
 function destructivelyAddElementToEndOfArray(arr, elem) {
-  return arr.push(elem);
+  return arr.splice(arr.length, -1, elem);
 }
 
-  describe('accessElementInArray(array, index)', () => {
-    it('accesses the element in array at the given index', () => {
-      expect(accessElementInArray([1, 2, 3], 2)).to.equal(3)
-    })
-  })
-  
-  describe('destructivelyRemoveElementFromBeginningOfArray(array)', ()=>{
-    it('returns the array with the first element removed', () => {
-      expect(destructivelyRemoveElementFromBeginningOfArray([1, 2, 3])).to.eql([2, 3])
-    })
-    
-    it('alters the original array', ()=>{
-      const array = [1, 2, 3];
-      destructivelyRemoveElementFromBeginningOfArray(array);
-      expect(array).to.eql([2, 3]);
-    })
-  })
+function accessElementInArray(arr, index) {
+  return arr[index];
+}
+
+function destructivelyRemoveElementFromBeginningOfArray(arr) {
+  return arr.splice(0, 1);
+}
+
+function removeElementFromBeginningOfArray(arr) {
+  return arr.slice(0, 1)
+}
 
   describe('removeElementFromBeginningOfArray(array)', () => {
     it('removes the first element from the array', () => {
