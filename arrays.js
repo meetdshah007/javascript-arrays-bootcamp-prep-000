@@ -2,7 +2,7 @@
 var chocolateBars = ['snickers', 'hundred grand', 'kitkat', 'skittles'];
 
 function addElementToBeginningOfArray(arr, elem) {
-  arr.slice(o, )
+  arr.splice()
 }
 
   describe('addElementToBeginningOfArray(array, element)', () => {
