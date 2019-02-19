@@ -6,51 +6,17 @@ function addElementToBeginningOfArray(arr, elem) {
   return [elem, ...arr]
 }
 
-function destructivelyAddElementToBeginningOfArray(arr, elem){
-  
+function destructivelyAddElementToBeginningOfArray(arr, elem) {
+  return arr.splice(0, -1, elem);
 }
- 
-  describe('destructivelyAddElementToBeginningOfArray(array, element)', () => {
-    it('adds an element to the beginning of an array', () => {
-      expect(destructivelyAddElementToBeginningOfArray([1], 'foo')).to.eql(['foo', 1])
-    })
 
-    it('alters the original array', () => {
-      const array = [1]
+function addElementToEndOfArray(arr, elem) {
+  return [...arr, elem];
+}
 
-      destructivelyAddElementToBeginningOfArray(array, 'foo')
-
-      expect(array).to.eql(['foo', 1])
-    })
-  })
-
-  describe('addElementToEndOfArray(array, element)', () => {
-    it('adds an element to the end of an array', () => {
-      expect(addElementToEndOfArray([1], 'foo')).to.eql([1, 'foo'])
-    })
-
-    it('does not alter the original array', () => {
-      const array = [1]
-
-      addElementToEndOfArray(array, 'foo')
-
-      expect(array).to.eql([1])
-    })
-  })
-
-  describe('destructivelyAddElementToEndOfArray(array, element)', () => {
-    it('adds an element to the end of an array', () => {
-      expect(destructivelyAddElementToEndOfArray([1], 'foo')).to.eql([1, 'foo'])
-    })
-
-    it('alters the original array', () => {
-      const array = [1]
-
-      destructivelyAddElementToEndOfArray(array, 'foo')
-
-      expect(array).to.eql([1, 'foo'])
-    })
-  })
+function destructivelyAddElementToEndOfArray(arr, elem) {
+  return arr.push(elem);
+}
 
   describe('accessElementInArray(array, index)', () => {
     it('accesses the element in array at the given index', () => {
